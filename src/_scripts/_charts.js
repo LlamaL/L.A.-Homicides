@@ -20,7 +20,6 @@ var years = annualTotals.map(a => a.year);
 function createChart(x, y, element, title){
 
   var settings = [{
-      title: title,
       x: x,
       y: y,
       type: 'bar',
@@ -34,6 +33,7 @@ function createChart(x, y, element, title){
   }];
 
   var layout = {
+      title:title,
       xaxis:{
         title: 'Year',
         fixedrange: true
