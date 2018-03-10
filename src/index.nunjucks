@@ -17,6 +17,16 @@ By Me
 
 {% block content %}
 <div class="main-container">
+
+<!-- charts go here -->
+
+   <div class = "charts-holder clearfix">
+      <div class = inline-chart id="county-homicides"></div>
+      <div class = inline-chart id="harvard-park-homicides"></div>
+   </div>
+
+
+
 <section>
 <h3>Lives lost</h3>
 <p>The {{ site.data.harvard_park_homicides|length }} homicides in Harvard Park since 2000 were primarily black and Latino males, but the list includes husbands, wives, fathers, mothers of all ages, and even some small children.</p>
@@ -32,4 +42,11 @@ By Me
 {% endfor %}
 </div>
 </section>
+{% endblock %}
+
+
+{% block scripts %}
+<script>
+var annualTotals = {% include '_data/annual_totals.json' %};
+</script>
 {% endblock %}
